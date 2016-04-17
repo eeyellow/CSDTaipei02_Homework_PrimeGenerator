@@ -11,15 +11,9 @@ namespace VIVALACODE
         public static int[] GeneratePrimes(int maxValue)
         {
             for (int i = maxValue; i >= 2; i--) {
-                List<int> primeList = PrimeFactor.breakdown(i);
-                for (int j = 0; j < primeList.Count; j++)
-                {
-                    if (!result.Contains(primeList[j]))
-                    {
-                        result.Add(primeList[j]);
-                    }
-                }
-            }
+                List<int> primeList = PrimeFactor.breakdown(i); //取得質因數陣列               
+                result = result.Union(primeList).ToList();
+            }            
             result.Sort();
             return result.ToArray();
         }
