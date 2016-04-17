@@ -9,7 +9,7 @@ namespace VIVALACODE
         [TestMethod]
         public void TestMethod1()
         {
-            
+            CollectionAssert.AreEqual(new List<int> { 2 }, PrimeGenerator.getPrime(2));
         }
     }
 }
