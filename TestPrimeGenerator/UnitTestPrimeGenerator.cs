@@ -7,21 +7,47 @@ namespace VIVALACODE
     public class UnitTest_PrimeGenerator
     {
         [TestMethod]
-        public void TestMethod2()
+        public void TestPrimes()
         {
-            CollectionAssert.AreEqual(new List<int> { 2 }, PrimeGenerator.getPrime(2));
+            int[] nullArray = PrimeGenerator.GeneratePrimes(0);
+            Assert.AreEqual(0, nullArray.Length);
+
+            int[] minArray = PrimeGenerator.GeneratePrimes(2);
+            Assert.AreEqual(1, minArray.Length);
+            Assert.AreEqual(2, minArray[0]);
+
+            int[] threeArray = PrimeGenerator.GeneratePrimes(3);
+            Assert.AreEqual(2, threeArray.Length);
+            Assert.AreEqual(2, threeArray[0]);
+            Assert.AreEqual(3, threeArray[1]);
+
+            int[] centArray = PrimeGenerator.GeneratePrimes(100);
+            Assert.AreEqual(25, centArray.Length);
+            Assert.AreEqual(97, centArray[24]);
+        }
+        [TestMethod]
+        public void TestExhaustive()
+        {
+            for (int i = 2; i < 500; i++)
+            {
+                VerifyPrimeList(PrimeGenerator.GeneratePrimes(i));
+            }
         }
 
-        [Ignore]
-        public void TestMethod3()
+        private void VerifyPrimeList(int[] list)
         {
-            CollectionAssert.AreEqual(new List<int> { 2, 3 }, PrimeGenerator.getPrime(3));
+            foreach (int i in list)
+            {
+                VerifyPrime(i);
+            }
         }
 
-        [Ignore]
-        public void TestMethod4()
+        private void VerifyPrime(int n)
         {
-            CollectionAssert.AreEqual(new List<int> { 2, 3 }, PrimeGenerator.getPrime(4));
+            for (int factor = 2; factor < n; factor++)
+            {
+                Assert.IsTrue(n % factor != 0);
+            }
         }
     }
 }

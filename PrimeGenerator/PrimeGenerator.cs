@@ -8,18 +8,19 @@ namespace VIVALACODE
     public static class PrimeGenerator
     {
         public static List<int> result = new List<int>();
-        public static List<int> getPrime(int maxValue)
+        public static int[] GeneratePrimes(int maxValue)
         {
-            List<int> primeList = PrimeFactor.breakdown(maxValue);
-            for(int i = 0; i < primeList.Count; i++)
-            {
-                if (!result.Contains(primeList[i]))
+            for (int i = maxValue; i >= 2; i--) {
+                List<int> primeList = PrimeFactor.breakdown(i);
+                for (int j = 0; j < primeList.Count; j++)
                 {
-                    result.Add(primeList[i]);
+                    if (!result.Contains(primeList[j]))
+                    {
+                        result.Add(primeList[j]);
+                    }
                 }
             }
-
-            return result;
+            return result.ToArray();
         }
     }
 }
