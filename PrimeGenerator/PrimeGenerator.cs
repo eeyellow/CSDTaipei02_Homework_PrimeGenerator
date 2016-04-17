@@ -20,6 +20,7 @@ namespace VIVALACODE
                     }
                 }
             }
+            result.Sort();
             return result.ToArray();
         }
     }
