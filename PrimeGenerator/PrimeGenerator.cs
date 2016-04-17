@@ -10,12 +10,13 @@ namespace VIVALACODE
         public static List<int> result = new List<int>();
         public static List<int> getPrime(int maxValue)
         {
-            if (maxValue == 2)
+            List<int> primeList = PrimeFactor.breakdown(maxValue);
+            for(int i = 0; i < primeList.Count; i++)
             {
-                result.Add(2);
-            }
-            else {
-                result.Add(3);
+                if (!result.Contains(primeList[i]))
+                {
+                    result.Add(primeList[i]);
+                }
             }
 
             return result;
