@@ -4,12 +4,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPrimeGenerator", "TestPrimeGenerator\TestPrimeGenerator.csproj", "{2EA9C0A1-DD91-40F2-8A49-D57D8C17ADCC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5D668E92-758B-462D-A56B-669AE9B8D9BB} = {5D668E92-758B-462D-A56B-669AE9B8D9BB}
+		{4F6C0DD5-7971-474D-A415-B5990D213701} = {4F6C0DD5-7971-474D-A415-B5990D213701}
+		{68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445} = {68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeGenerator", "PrimeGenerator\PrimeGenerator.csproj", "{4F6C0DD5-7971-474D-A415-B5990D213701}"
+	ProjectSection(ProjectDependencies) = postProject
+		{68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445} = {68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeFactor", "PrimeFactor\PrimeFactor.csproj", "{68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPrimeFactor", "TestPrimeFactor\TestPrimeFactor.csproj", "{5D668E92-758B-462D-A56B-669AE9B8D9BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4F6C0DD5-7971-474D-A415-B5990D213701} = {4F6C0DD5-7971-474D-A415-B5990D213701}
+		{68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445} = {68BCD6F2-1C64-4FAC-9D6A-DDECE44FA445}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
